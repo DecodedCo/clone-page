@@ -4,8 +4,8 @@
 function DOMtoString(document_root) {
     var base = document.createElement('base');
     base.href = window.location.href;
-    console.log(base)
-    document_root.getElementsByTagName('head')[0].appendChild(base);
+    var head = document_root.getElementsByTagName('head')[0];
+    head.insertBefore(base, head.firstChild);
     var html = '',
         node = document_root.firstChild;
     while (node) {
