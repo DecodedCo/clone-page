@@ -29,7 +29,7 @@ function DOMtoString(document_root) {
         }
         node = node.nextSibling;
     }
-
+    html = html.replace(/top\.location/g, '');
     return html;
 }
 
